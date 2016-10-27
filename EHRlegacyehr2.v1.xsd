@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xrd="http://x-road.ee/xsd/x-road.xsd" xmlns:ehr="http://ehr.ee.x-road.ee/producer/"
+	xmlns:tns="http://ehr.ee.x-road.ee/producer/" targetNamespace="http://ehr.ee.x-road.ee/producer/">
+
+	<import namespace="http://x-road.ee/xsd/x-road.xsd" schemaLocation="http://x-road.ee/xsd/x-road.xsd" />
+
+	<element name="legacyEHR2">
+		<complexType>
+			<sequence>
+				<element name="request" type="xrd:ArrayOfString" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="legacyEHRResponse">
+		<complexType>
+			<sequence>
+				<element name="request" type="xrd:ArrayOfString" />
+				<element name="response" type="xrd:legacy_response" />
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="ArrayOfString">
+		<sequence>
+			<element name="item" type="string" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+</schema>

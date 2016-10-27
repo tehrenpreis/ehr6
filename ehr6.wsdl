@@ -1,0 +1,459 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ehr.ee.x-road.ee/producer/" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ehr.ee.x-road.ee/producer/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ehr.ee.x-road.ee/producer/">
+            <import namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="http://x-road.eu/xsd/xroad.xsd"/>
+            <!-- ALL custom defined types for easy validation -->
+			<!-- tech start -->
+			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRauthqueryehr.v1.xsd" />
+			<!-- tech end -->
+			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRlegacyehr2.v1.xsd" />
+			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=ehr_xroad_types.xsd" />
+        </schema>
+    </types>
+    <message name="xrdHeader">
+        <part element="xrd:client" name="client"/>
+        <part element="xrd:service" name="service"/>
+        <part element="xrd:id" name="id"/>
+        <part element="xrd:userId" name="userId"/>
+        <part element="xrd:issue" name="issue"/>
+        <part element="xrd:protocolVersion" name="protocolVersion"/>
+    </message>
+    <message name="authQueryEHR">
+        <part element="tns:authQueryEHR" name="body"/>
+    </message>
+    <message name="authQueryEHRResponse">
+        <part element="tns:authQueryEHRResponse" name="body"/>
+    </message>
+    <message name="ehitiseAjahetkeParingRequest">
+        <part element="tns:ehitiseAjahetkeParing" name="body"/>
+    </message>
+    <message name="ehitiseAjahetkeParingResponse">
+        <part element="tns:ehitiseAjahetkeParingResponse" name="body"/>
+    </message>
+    <message name="ehitiseAjalooParingRequest">
+        <part element="tns:ehitiseAjalooParing" name="body"/>
+    </message>
+    <message name="ehitiseAjalooParingResponse">
+        <part element="tns:ehitiseAjalooParingResponse" name="body"/>
+    </message>
+    <message name="ehitiseAndmeteParingRequest">
+        <part element="tns:ehitiseAndmeteParing" name="body"/>
+    </message>
+    <message name="ehitiseAndmeteParingResponse">
+        <part element="tns:ehitiseAndmeteParingResponse" name="body"/>
+    </message>
+    <message name="ehitiseMuudatusteParingRequest">
+        <part element="tns:ehitiseMuudatusteParing" name="body"/>
+    </message>
+    <message name="ehitiseMuudatusteParingResponse">
+        <part element="tns:ehitiseMuudatusteParingResponse" name="body"/>
+    </message>
+    <message name="ehrDokumendiParingRequest">
+        <part element="tns:ehrDokumendiParing" name="body"/>
+    </message>
+    <message name="ehrDokumendiParingResponse">
+        <part element="tns:ehrDokumendiParingResponse" name="body"/>
+    </message>
+    <message name="ehrIsikuKinnistulAsuvadEhitisedParingRequest">
+        <part element="tns:ehrIsikuKinnistulAsuvadEhitisedParing" name="body"/>
+    </message>
+    <message name="ehrIsikuKinnistulAsuvadEhitisedParingResponse">
+        <part element="tns:ehrIsikuKinnistulAsuvadEhitisedParingResponse" name="body"/>
+    </message>
+    <message name="ehrIsikuVallasvaraParingRequest">
+        <part element="tns:ehrIsikuVallasvaraParing" name="body"/>
+    </message>
+    <message name="ehrIsikuVallasvaraParingResponse">
+        <part element="tns:ehrIsikuVallasvaraParingResponse" name="body"/>
+    </message>
+    <message name="ehrIsikuteParingRequest">
+        <part element="tns:ehrIsikuteParing" name="body"/>
+    </message>
+    <message name="ehrIsikuteParingResponse">
+        <part element="tns:ehrIsikuteParingResponse" name="body"/>
+    </message>
+    <message name="ehrKOVKontaktParingRequest">
+        <part element="tns:ehrKOVKontaktParing" name="body"/>
+    </message>
+    <message name="ehrKOVKontaktParingResponse">
+        <part element="tns:ehrKOVKontaktParingResponse" name="body"/>
+    </message>
+    <message name="legacyEHR2">
+        <part element="tns:legacyEHR2" name="body"/>
+    </message>
+    <message name="legacyEHRResponse">
+        <part element="tns:legacyEHRResponse" name="body"/>
+    </message>
+    <message name="omandiJaPiiranguteParingRequest">
+        <part element="tns:omandiJaPiiranguteParing" name="body"/>
+    </message>
+    <message name="omandiJaPiiranguteParingResponse">
+        <part element="tns:omandiJaPiiranguteParingResponse" name="body"/>
+    </message>
+    <portType name="ehrPorttype">
+        <operation name="authQueryEHR">
+            <documentation>
+                <xrd:title>EHR pärandinfosüsteemi sisenemise
+					teenus
+				</xrd:title>
+            </documentation>
+            <input message="tns:authQueryEHR"/>
+            <output message="tns:authQueryEHRResponse"/>
+        </operation>
+        <operation name="ehitiseAjahetkeParing">
+            <documentation>
+                <xrd:title>Ehitise ajahetke päring</xrd:title>
+            </documentation>
+            <input message="tns:ehitiseAjahetkeParingRequest"/>
+            <output message="tns:ehitiseAjahetkeParingResponse"/>
+        </operation>
+        <operation name="ehitiseAjalooParing">
+            <documentation>
+                <xrd:title>Ehitise ajaloo päring</xrd:title>
+            </documentation>
+            <input message="tns:ehitiseAjalooParingRequest"/>
+            <output message="tns:ehitiseAjalooParingResponse"/>
+        </operation>
+        <operation name="ehitiseAndmeteParing">
+            <documentation>
+                <xrd:title>Ehitise andmete päring</xrd:title>
+            </documentation>
+            <input message="tns:ehitiseAndmeteParingRequest"/>
+            <output message="tns:ehitiseAndmeteParingResponse"/>
+        </operation>
+        <operation name="ehitiseMuudatusteParing">
+            <documentation>
+                <xrd:title>Ehitise muudatuste päring</xrd:title>
+            </documentation>
+            <input message="tns:ehitiseMuudatusteParingRequest"/>
+            <output message="tns:ehitiseMuudatusteParingResponse"/>
+        </operation>
+        <operation name="ehrDokumendiParing">
+            <documentation>
+                <xrd:title>EHR registri dokumendi päring</xrd:title>
+            </documentation>
+            <input message="tns:ehrDokumendiParingRequest"/>
+            <output message="tns:ehrDokumendiParingResponse"/>
+        </operation>
+        <operation name="ehrIsikuKinnistulAsuvadEhitisedParing">
+            <documentation>
+                <xrd:title>EHR registris isiku kinnistul asuvate ehitised päring (Kinnistul paiknevad
+					Ehitisregistris registreeritud ehitised)
+				</xrd:title>
+            </documentation>
+            <input message="tns:ehrIsikuKinnistulAsuvadEhitisedParingRequest"/>
+            <output message="tns:ehrIsikuKinnistulAsuvadEhitisedParingResponse"/>
+        </operation>
+        <operation name="ehrIsikuVallasvaraParing">
+            <documentation>
+                <xrd:title>EHR registris isiku vallasvara päring</xrd:title>
+            </documentation>
+            <input message="tns:ehrIsikuVallasvaraParingRequest"/>
+            <output message="tns:ehrIsikuVallasvaraParingResponse"/>
+        </operation>
+        <operation name="ehrIsikuteParing">
+            <documentation>
+                <xrd:title>EHR registri isikute päring</xrd:title>
+            </documentation>
+            <input message="tns:ehrIsikuteParingRequest"/>
+            <output message="tns:ehrIsikuteParingResponse"/>
+        </operation>
+        <operation name="ehrKOVKontaktParing">
+            <documentation>
+                <xrd:title>EHR registri KOVide kontaktandmete päring</xrd:title>
+            </documentation>
+            <input message="tns:ehrKOVKontaktParingRequest"/>
+            <output message="tns:ehrKOVKontaktParingResponse"/>
+        </operation>
+        <operation name="legacyEHR2">
+            <documentation>
+                <xrd:title>EHR registrisse sisenemise
+					teenus
+				</xrd:title>
+            </documentation>
+            <input message="tns:legacyEHR2"/>
+            <output message="tns:legacyEHRResponse"/>
+        </operation>
+        <operation name="omandiJaPiiranguteParing">
+            <documentation>
+                <xrd:title>Omandi ja piirangute päring</xrd:title>
+            </documentation>
+            <input message="tns:omandiJaPiiranguteParingRequest"/>
+            <output message="tns:omandiJaPiiranguteParingResponse"/>
+        </operation>
+    </portType>
+   <binding name="ehrBinding" type="tns:ehrPorttype">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="authQueryEHR">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehitiseAjahetkeParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehitiseAjalooParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehitiseAndmeteParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehitiseMuudatusteParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehrDokumendiParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehrIsikuKinnistulAsuvadEhitisedParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehrIsikuVallasvaraParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehrIsikuteParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ehrKOVKontaktParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="legacyEHR2">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="omandiJaPiiranguteParing">
+            <soap:operation soapAction=""/>
+            <xrd:version>v1</xrd:version>
+            <input>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:header message="tns:xrdHeader" part="client" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="service" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="id" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="protocolVersion" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="userId" use="literal"/>
+                <soap:header message="tns:xrdHeader" part="issue" use="literal"/>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ehrService">
+		<port name="ehrPort" binding="tns:ehrBinding">
+			<soap:address location="http://TURVASERVER/cgi-bin/consumer_proxy" />
+			<xrd:title>EHR-i X-TEE teenused</xrd:title>
+			<xrd:address producer="ehr" />
+		</port>
+	</service>
+</definitions>
