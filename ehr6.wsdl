@@ -6,7 +6,7 @@
 			<!-- tech start -->
 			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRauthqueryehr.v1.xsd" />
 			<!-- tech end -->
-			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRlegacyehr2.v1.xsd" />
+			<include schemaLocation="https://raw.githubusercontent.com/tehrenpreis/ehr6/master/EHRlegacyehr2.v1.xsd" />
 			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=ehr_xroad_types.xsd" />
         </schema>
     </types>
