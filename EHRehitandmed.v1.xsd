@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xrd="http://x-road.ee/xsd/x-road.xsd" 
+	xmlns:tns="http://ehr.ee.x-road.ee/producer/" targetNamespace="http://ehr.ee.x-road.ee/producer/">
+	<import namespace="http://x-road.ee/xsd/x-road.xsd" schemaLocation="http://x-road.ee/xsd/x-road.xsd" />
+	<include schemaLocation="ehr_xrd.xsd" />
+	<element name="ehitiseAndmeteParing">
+		<complexType>
+			<sequence>
+				<element name="request" type="tns:ehitiseAndmeteParingRequestType" />
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="ehitiseAndmeteParingRequestType">
+		<sequence>
+			<element name="ehrKood" type="string" minOccurs="0">
+				<annotation>
+					<appinfo>
+						<xrd:title>Ehitise kood</xrd:title>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="katastritunnus" type="tns:kyTunnusType" minOccurs="0">
+				<annotation>
+					<appinfo>
+						<xrd:title>Katastritunnus</xrd:title>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="ehitId" type="long" minOccurs="0">
+				<annotation>
+					<appinfo>
+						<xrd:title>Ehitise tehniline vqti</xrd:title>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="aadressTxt" type="string" minOccurs="0">
+				<annotation>
+					<appinfo>
+						<xrd:title>Aadress tekstina</xrd:title>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="adsOid" type="string" minOccurs="0">
+				<annotation>
+					<appinfo>
+						<xrd:title>Ehitise ADS süsteemi kood</xrd:title>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="andmevektor" type="tns:andmevektorType" default="100000000000">
+				<annotation>
+					<appinfo>
+						<xrd:title>Andmevektor</xrd:title>
+						<xrd:notes>12 sümbolist koosnev string, millega määratakse,
+							milliseid andmeid teenus tagastab. Vaikimisi
+							100000000000
+						</xrd:notes>
+						<xrd:fieldsize>12</xrd:fieldsize>
+					</appinfo>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- complexType name="ehitiseAndmeteParingResponseType"> <sequence> <element name="tyhiVastus" type="string"> <annotation> 
+		<appinfo> <xrd:title>KUVA MIND</xrd:title> </appinfo> </annotation> </element> </sequence> </complexType>
+	<complexType name="ehitiseAndmeteParingResponseType">
+		<sequence>
+			<element name="kalad">
+				<annotation>
+					<appinfo>
+						<xrd:title>Kalad</xrd:title>
+					</appinfo>
+				</annotation>
+				<complexType>
+					<sequence>
+						<element name="kala" type="string" maxOccurs="2" minOccurs="2"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType  -->
+	<element name="ehitiseAndmeteParingResponse">
+		<complexType>
+			<sequence>
+				<element name="request" type="tns:ehitiseAndmeteParingRequestType" />
+				<element name="response" type="tns:ehitiseAndmeteParingResponseType" />
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

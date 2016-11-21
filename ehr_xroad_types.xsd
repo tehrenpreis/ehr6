@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema version="1.0" targetNamespace="http://ehr.ee.x-road.ee/producer/"  
+	xmlns:ehr="http://ehr.ee.x-road.ee/producer/"  xmlns="http://www.w3.org/2001/XMLSchema">
+      <include  schemaLocation="EHRehitandmed.v1.xsd"/>
+      <include  schemaLocation="EHRehitmuudatused.v1.xsd"/>
+      <include  schemaLocation="EHRehithetkeandmed.v1.xsd"/>
+      <include  schemaLocation="EHRehitajalugu.v1.xsd"/>
+      <include  schemaLocation="EHRehitomand.v1.xsd"/>
+      <include  schemaLocation="EHRehitisik.v1.xsd"/>
+      <include  schemaLocation="EHRehitdokument.v1.xsd"/>
+      <include  schemaLocation="EHRehitKOVkontakt.v1.xsd"/>
+      <include  schemaLocation="EHRehitvallasvara.v1.xsd"/>
+      <include  schemaLocation="EHRehitisikukinnistu.v1.xsd"/>  
+      <include  schemaLocation="ehr_xrd.xsd" />    
+</schema>
