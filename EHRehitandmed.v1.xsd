@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd" 
 	xmlns:tns="http://ehr.ee.x-road.ee/producer/" targetNamespace="http://ehr.ee.x-road.ee/producer/">
-            <import namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="http://x-road.eu/xsd/xroad.xsd"/>
+            
 	<include schemaLocation="ehr_xrd.xsd" />
 	<element name="ehitiseAndmeteParing">
 		<complexType>
