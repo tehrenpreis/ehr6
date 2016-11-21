@@ -6,7 +6,7 @@
 			<!-- tech start -->
 			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRauthqueryehr.v1.xsd" />
 			<!-- tech end -->
-			<include schemaLocation="https://raw.githubusercontent.com/tehrenpreis/ehr6/master/EHRlegacyehr2.v1.xsd" />
+			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=EHRlegacyehr2.v1.xsd"/>
 			<include schemaLocation="http://test.ehr.ee/xrd/wsdl?2=ehr_xroad_types.xsd" />
         </schema>
     </types>
@@ -451,7 +451,7 @@
     </binding>
     <service name="ehrService">
 		<port name="ehrPort" binding="tns:ehrBinding">
-			<soap:address location="http://TURVASERVER/cgi-bin/consumer_proxy" />
+			<soap:address location="http://10.56.104.22/cgi-bin/consumer_proxy"/>
 			<xrd:title>EHR-i X-TEE teenused</xrd:title>
 			<xrd:address producer="ehr" />
 		</port>
